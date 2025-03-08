@@ -2,18 +2,20 @@ package metier;
 
 import dao.IDao;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component("metier")// Pour déclarer un bean
+@Service("metier")// Pour déclarer un bean
 public class MetierImpl implements IMetier {
-    @Autowired // Injection de dépendance
+
+   // @Autowired // Injection de dépendance
     private IDao idao;
-    public MetierImpl(IDao dao ) {
+
+    public MetierImpl(@Qualifier("dao2") IDao dao ) {
         this.idao = dao;
     }
 
-    public MetierImpl() {
-    }
 
     @Override
     public double calcul() {
