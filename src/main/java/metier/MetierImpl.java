@@ -1,8 +1,12 @@
 package metier;
 
 import dao.IDao;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component("metier")// Pour déclarer un bean
 public class MetierImpl implements IMetier {
+    @Autowired // Injection de dépendance
     private IDao idao;
     public MetierImpl(IDao dao ) {
         this.idao = dao;
