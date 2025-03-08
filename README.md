@@ -1,6 +1,6 @@
 <h1 align="center">
-  <a href="https://https://github.com/ZakariaOuakrim/Spring-IOC">
-    <img src="https://raw.githubusercontent.com/ZakariaOuakrim/Dependency-Injection-Spring/master/src/main/resources/images/1.png" >
+  <a href="https://github.com/ZakariaOuakrim/Spring-IOC">
+    <img src="https://raw.githubusercontent.com/ZakariaOuakrim/Spring-IOC/master/src/main/resources/images/1.png" >
   </a>
 </h1>
 <p align="center">
