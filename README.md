@@ -8,33 +8,37 @@
 </p>
 <p align="center">
   This repository contains the <strong>Dependency Injection</strong> source code.
-   It teaches static and dynamic dependency injection in Java using constructors and getters.
+   It teaches dependency injection in Spring Boot using config.xml file and Annotations.
 </p>
 
 <p align="center">
 <a href="#introduction">Introduction</a> &nbsp;&bull;&nbsp;
 <a href="#installation">Installation</a> &nbsp;&bull;&nbsp;
-<a href="#Static-Approach">Static-Approach</a> &nbsp;&bull;&nbsp;
-<a href="#Dynamic-Approach">Dynamic-Approach</a> &nbsp;&bull;&nbsp;
+<a href="#Injection-config.xml">Injection-config.xml</a> &nbsp;&bull;&nbsp;
+<a href="#Injection-Annotation">Injection-Annotation</a> &nbsp;&bull;&nbsp;
 <a href="#issue">Issue?</a>
 </p>
 
 # Introduction
-This <b>Dependency Injection</b> teaches dependency injection in Java. You can:
+This <b>Dependency Injection</b> teaches dependency injection in Spring boot. You can:
 
-- Implement static dependency injection.
-- Implement dynamic dependency injection.
-- Use constructors for dependency injection.
-- Use getters for dependency injection.
-- Integrate this with any Java project.
+- Implements dependency injection in Spring.
+- Demonstrates dependency injection using a config.xml file
+- Demonstrates dependency injection using Annotations
 
 ## Installation
-##### Copy the repository
+##### Copy the repository to your local machine
 ```
-git clone https://github.com/ZakariaOuakrim/Dependency-Injection-Spring.git
+git clone https://github.com/ZakariaOuakrim/Spring-IOC
 ```
+##### Understand the code 
+- The code contains two packages <b>dao</b> and <b>metier</b> which are the implementation of the <b>IDao</b> and <b>IMetier</b> interfaces.
+- The ext package contains another implementation of the <b>IDao</b> interface.
+- The pres package contains the main class which demonstrates the dependency injection using a config.xml file and Annotations.
 
-## Static-Approach
+<img src="https://raw.githubusercontent.com/ZakariaOuakrim/Spring-IOC/master/src/main/resources/images/2.png" >
+
+## Injection-config.xml
 Using the static approach with either a getter or constructor:<br/>
 ```
 public static void main(String[] args) {  
