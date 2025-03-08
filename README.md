@@ -5,7 +5,9 @@
 </h1>
 <p align="center">
 &nbsp <a target="_blank" href="https://www.linkedin.com/in/zakariaouakz/"><img height="20" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
-&nbsp <a target="_blank" href="https://gmail.com"><img height="20" src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
+<a target="_blank" href="mailto:?cc=your-email@gmail.com">
+  <img height="20" src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
+</a>
 </p>
 <p align="center">
   This repository contains the <strong>Dependency Injection</strong> source code.
