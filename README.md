@@ -5,6 +5,7 @@
 </h1>
 <p align="center">
 &nbsp <a target="_blank" href="https://www.linkedin.com/in/zakariaouakz/"><img height="20" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
+&nbsp <a target="_blank" href="https://gmail.com"><img height="20" src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
 </p>
 <p align="center">
   This repository contains the <strong>Dependency Injection</strong> source code.
@@ -105,7 +106,7 @@ public class MetierImpl implements IMetier {
 
 
 ## Issue
-This repository is maintained actively, so if you face any issue please <a href="https://github.com/ZakariaOuakrim/Dependency-Injection-Spring/issues/new">raise an issue</a>.
+This repository is maintained actively, so if you face any issue please <a href="https://github.com/ZakariaOuakrim/Spring-IOC/issues/new">raise an issue</a>.
 
 <h4>Liked the work ?</h4>
 Give the repository a star :-)
