@@ -9,5 +9,6 @@ public class PresentationAvecSpringXML {
         ApplicationContext context = new ClassPathXmlApplicationContext("config.xml");
         IMetier metier = (IMetier) context.getBean("metier");
         System.out.println("Resultat = " + metier.calcul());
+
     }
 }
