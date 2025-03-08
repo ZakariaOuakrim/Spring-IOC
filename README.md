@@ -5,7 +5,7 @@
 </h1>
 <p align="center">
 &nbsp <a target="_blank" href="https://www.linkedin.com/in/zakariaouakz/"><img height="20" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
-<a target="_blank" href="https://mail.google.com/mail/?view=cm&cc=ouakrimzakaria18@gmail.com">
+<a href="https://mail.google.com/mail/?view=cm&to=ouakrimzakaria18@gmail.com" target="_blank" onclick="window.open(this.href,'_blank'); return false;">
   <img height="20" src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
 </a>
 
