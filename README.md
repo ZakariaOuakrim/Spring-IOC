@@ -18,7 +18,7 @@
 <p align="center">
 <a href="#introduction">Introduction</a> &nbsp;&bull;&nbsp;
 <a href="#installation">Installation</a> &nbsp;&bull;&nbsp;
-<a href="#Injection-config.xml">Injection-config.xml</a> &nbsp;&bull;&nbsp;
+<a href="#Injection-config-xml">Injection-config-xml</a> &nbsp;&bull;&nbsp;
 <a href="#Injection-Annotation">Injection-Annotation</a> &nbsp;&bull;&nbsp;
 <a href="#issue">Issue?</a>
 </p>
@@ -42,7 +42,7 @@ git clone https://github.com/ZakariaOuakrim/Spring-IOC
 
 <img src="https://raw.githubusercontent.com/ZakariaOuakrim/Spring-IOC/master/src/main/resources/images/2.png" />
 
-## Injection-config.xml
+## Injection-config-xml
 Using a config.xml file to inject the dependencies, it creates the beans and injects them into the classes.
 In this case, the <b>DaoImpl</b> class is injected into the <b>MetierImpl</b> class using the constructor, but we can inject it using the setter as well.
 
