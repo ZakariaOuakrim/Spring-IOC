@@ -18,7 +18,7 @@ public class MetierImpl implements IMetier {
         return res;
     }
 
-    public void setIdao(IDao idao) {
+    public void setDao(IDao idao) {
         this.idao = idao;
     }
 }
