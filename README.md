@@ -36,60 +36,73 @@ git clone https://github.com/ZakariaOuakrim/Spring-IOC
 - The ext package contains another implementation of the <b>IDao</b> interface.
 - The pres package contains the main class which demonstrates the dependency injection using a config.xml file and Annotations.
 
-<img src="https://raw.githubusercontent.com/ZakariaOuakrim/Spring-IOC/master/src/main/resources/images/2.png" >
+<img src="https://raw.githubusercontent.com/ZakariaOuakrim/Spring-IOC/master/src/main/resources/images/2.png" />
 
 ## Injection-config.xml
-Using the static approach with either a getter or constructor:<br/>
+Using a config.xml file to inject the dependencies, it creates the beans and injects them into the classes.
+In this case, the <b>DaoImpl</b> class is injected into the <b>MetierImpl</b> class using the constructor, but we can inject it using the setter as well.
+
+<img src="https://raw.githubusercontent.com/ZakariaOuakrim/Spring-IOC/master/src/main/resources/images/3.png" />
+
+
+## Injection-Annotation
+
+This part demonstrates the dependency injection using Annotations.
+- Here we used the <b>@Component</b> annotation to create the beans and inject them into the classes.
 ```
-public static void main(String[] args) {  
-    DaoImpl d = new DaoImpl();  
-    MetierImpl metier = new MetierImpl(d);  
-    //metier.setDao(d); //injection via le setter  
-    System.out.println("Resultat "+ metier.calcul());  
+import org.springframework.stereotype.Component;
+
+@Component("dao2")
+public class DaoImplV2 implements IDao {
+
+    @Override
+    public double getData() {
+        System.out.println("Version Webservice");
+        double t=77;
+        return t;
+    }
+}
+```
+- We can use specific annotations to inject beans related to data access, service, or controller.
+
+```
+@Repository("dao")
+public class DaoImpl implements IDao {
+    @Override
+    public double getData() {
+        System.out.println("Version Base de donnée");
+        double temp=25;
+        return temp;
+    }
+}
+```
+- The <b>@Autowired</b> annotation is used to inject the beans into the classes, but it is not recommended to use it.
+- The <b>@Qualifier</b> annotation is used to specify the bean to be injected into the class, if we have multiple beans of the same type.
+```
+@Service("metier")// Pour déclarer un bean
+public class MetierImpl implements IMetier {
+
+   // @Autowired // Injection de dépendance
+    private IDao idao;
+
+    public MetierImpl(@Qualifier("dao2") IDao dao ) {
+        this.idao = dao;
+    }
+
+
+    @Override
+    public double calcul() {
+        double data = idao.getData();
+        double res=data*2;
+        return res;
+    }
+
+    public void setDao(IDao idao) {
+        this.idao = idao;
+    }
 }
 ```
 
-
-## Dynamic-Approach
-
-Reading from a config file then loading and building the classes with their properties/methods
-### 1. Config file
-```
-dao.DaoImpl  
-metier.MetierImpl
-```
-This approach also provides two options either with a constructor or a setter, the choice between <b>DaoImpl</b> or <b>DaoImpv2</b> depends on the config file
-```
-public static void main(String[] args) {  
-    try {  
-        Scanner scanner = new Scanner(new File("config.txt"));  
-        String daoClassName = scanner.nextLine();  
-        System.out.println("Class: " + daoClassName);  
-  
-        //DaoImpl d = new DaoImpl();  
-        Class cDao=Class.forName(daoClassName);  
-        IDao dao = (IDao) cDao.getConstructor().newInstance();  
-        System.out.println("Dao: " + dao.getData());  
-  
-        //MetierImpl metier = new MetierImpl(d);  
-        String metierClassName = scanner.nextLine();  
-        System.out.println("Metier: " + metierClassName);  
-        Class cMetier=Class.forName(metierClassName);  
-        //using constructor  
-        //IMetier metier = (IMetier) cMetier.getConstructor(IDao.class).newInstance(dao);  
-        //using setter        IMetier metier = (IMetier) cMetier.getConstructor().newInstance();  
-  
-        //metier.setDao(d);  
-        Method setDao=cMetier.getDeclaredMethod("setDao", IDao.class);  
-        setDao.invoke(metier,dao);  
-  
-        System.out.println("Resultat "+metier.calcul());  
-  
-    } catch (Exception e) {  
-        System.out.println(e.getMessage());  
-    }  
-}
-```
 
 ## Issue
 This repository is maintained actively, so if you face any issue please <a href="https://github.com/ZakariaOuakrim/Dependency-Injection-Spring/issues/new">raise an issue</a>.
